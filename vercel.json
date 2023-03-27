@@ -1,6 +1,5 @@
 {
    "version": 2,
-   "name": "CVApp",
    "builds": [
      {
        "src": "index.js",

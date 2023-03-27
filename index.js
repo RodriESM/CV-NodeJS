@@ -15,7 +15,6 @@ const PORT = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
 
-
 app.listen(PORT, () => {
   console.log(`API listening on PORT ${PORT}`);
 });
