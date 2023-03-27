@@ -89,7 +89,7 @@
     "vhost": "~3.0.2"
   },
   "engines": {
-    "node": ">= 0.10.0"
+    "node": "18.12.1"
   },
   "files": [
     "LICENSE",
