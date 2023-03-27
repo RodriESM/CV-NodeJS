@@ -213,3 +213,6 @@ app.delete('/profiles/:id', async (req, res) => {
     res.status(500).send(error);
   }
 });
+
+// Export the Express API
+module.exports = app;
