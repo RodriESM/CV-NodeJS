@@ -14,9 +14,9 @@
       "use": "@now/node-server"
     }
    ],
-   "routes": [
+   "routes": [{"handle": "filesystem"},
      {
-       "src": "/(.*)",
+       "src": "/.*",
        "dest": "index.js"
      }
    ]
