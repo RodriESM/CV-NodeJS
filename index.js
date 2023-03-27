@@ -17,8 +17,12 @@ app.use(bodyParser.json());
 
 
 app.listen(PORT, () => {
-  console.log(`Servidor corriendo en el puerto ${PORT}`);
+  console.log(`API listening on PORT ${PORT}`);
 });
+
+app.get('/', (req, res) => {
+  res.send('Hey this is my API running 🥳')
+})
 
 // Endpoint to retrieve all profiles
 app.get('/profiles', async (req, res) => {
