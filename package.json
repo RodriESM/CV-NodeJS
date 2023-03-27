@@ -14,7 +14,10 @@
     "Young Jae Sim <hanul@hanul.me>"
   ],
   "license": "MIT",
-  "repository": "expressjs/express",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/expressjs/express.git"
+  },
   "homepage": "http://expressjs.com/",
   "keywords": [
     "express",
@@ -101,5 +104,11 @@
     "test-ci": "nyc --reporter=lcovonly --reporter=text npm test",
     "test-cov": "nyc --reporter=html --reporter=text npm test",
     "test-tap": "mocha --require test/support/env --reporter tap --check-leaks test/ test/acceptance/"
+  },
+  "bugs": {
+    "url": "https://github.com/expressjs/express/issues"
+  },
+  "directories": {
+    "lib": "lib"
   }
 }
