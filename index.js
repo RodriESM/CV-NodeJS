@@ -50,7 +50,7 @@ app.get('/estudios/:id', async (req, res) => {
     
     // Retrieve the related documents for estudios
     const estudiosCollection = await connectToDatabase('estudios');
-    const estudiosResult = await estudiosCollection.find({_id: new ObjectId(resultJson[0].value.estudios[0])}).toArray();
+    const estudiosResult = await estudiosCollection.find({_id: new ObjectId(resultJson[0].estudios[0])}).toArray();
 
     res.json(estudiosResult);
     
@@ -75,7 +75,7 @@ app.get('/experiencias/:id', async (req, res) => {
     
     // Retrieve the related documents for experiencias
     const experienciasCollection = await connectToDatabase('experiencias');
-    const experienciasResult = await experienciasCollection.find({_id: {$in: resultJson[0].value.experiencias}}).toArray();
+    const experienciasResult = await experienciasCollection.find({_id: {$in: resultJson[0].experiencias}}).toArray();
 
     res.json(experienciasResult);
     
@@ -100,7 +100,7 @@ app.get('/intereses/:id', async (req, res) => {
     
     // Retrieve the related documents for intereses
     const interesesCollection = await connectToDatabase('intereses');
-    const interesesResult = await interesesCollection.find({_id: {$in: resultJson[0].value.intereses}}).toArray();
+    const interesesResult = await interesesCollection.find({_id: {$in: resultJson[0].intereses}}).toArray();
 
     res.json(interesesResult);
     
@@ -125,7 +125,7 @@ app.get('/aptitudes/:id', async (req, res) => {
     
     // Retrieve the related documents for aptitudes
     const aptitudesCollection = await connectToDatabase('aptitudes');
-    const aptitudesResult = await aptitudesCollection.find({_id: {$in: resultJson[0].value.aptitudes}}).toArray();
+    const aptitudesResult = await aptitudesCollection.find({_id: {$in: resultJson[0].aptitudes}}).toArray();
 
     res.json(aptitudesResult);
     
@@ -151,7 +151,7 @@ app.get('/hobbies/:id', async (req, res) => {
     
     // Retrieve the related documents for hobbies
     const hobbiesCollection = await connectToDatabase('hobbies');
-    const hobbiesResult = await hobbiesCollection.find({_id: {$in: resultJson[0].value.hobbies}}).toArray();
+    const hobbiesResult = await hobbiesCollection.find({_id: {$in: resultJson[0].hobbies}}).toArray();
 
     res.json(hobbiesResult);
     
