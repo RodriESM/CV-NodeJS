@@ -9,8 +9,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const { connectToDatabase } = require('./database');
 const { ObjectId } = require('mongodb');
+const cors = require('cors');
 
 const app = express();
+// Enable CORS for all routes
+app.use(cors());
+
 const PORT = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
