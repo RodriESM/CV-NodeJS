@@ -21,7 +21,9 @@ app.listen(PORT, () => {
   console.log(`API listening on PORT ${PORT}`);
 });
 
-app.use( '/api', require('./routes/controllers') );
+app.use( '/api', require('./routes/controllers'), (req,res ) => {
+  res.redirect('/api');
+});
 
 // Export the Express API
 module.exports = app;
