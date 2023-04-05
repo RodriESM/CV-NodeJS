@@ -17,7 +17,7 @@
    "routes": [{"handle": "filesystem"},
      {
        "src": "/.*",
-       "dest": "./routes/controllers.js"
+       "dest": "index.js"
      },
      {
       "src": "/.*",
