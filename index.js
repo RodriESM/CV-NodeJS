@@ -21,7 +21,7 @@ app.listen(PORT, () => {
   console.log(`API listening on PORT ${PORT}`);
 });
 
-app.use( '/api', require('./routes/controllers'));
+app.use( '/api', require('./routes/profile'));
 
 app.get('/', (req, res) => {
   res.send('Hey this is my API running 🥳 -> /api');

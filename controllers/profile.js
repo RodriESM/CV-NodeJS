@@ -1,15 +1,11 @@
-const { Router } = require('express');
 const { connectToDatabase } = require('../database');
 const { ObjectId } = require('mongodb');
 
-const router = Router();
-
-  router.get('/', (req, res) => {
+const home = (req, res) => {
     res.send('Hey this is my API running 🥳');
-  })
-  
-  // Endpoint to retrieve all profiles
-  router.get('/profiles', async (req, res) => {
+};
+
+const getAllProfiles = async (req, res) => {
     try {
       const collection = await connectToDatabase('profiles');
       const result = await collection.find().toArray();
@@ -18,10 +14,9 @@ const router = Router();
       console.error(error);
       res.status(500).send(error);
     }
-  });
-  
-  // Endpoint to retrieve all estudios
-  router.get('/estudios/:id', async (req, res) => {
+}
+
+const getEstudiosByProfileId = async (req, res) => {
     try {
       const id = req.params.id;
   
@@ -43,10 +38,9 @@ const router = Router();
       console.error(error);
       res.status(500).send(error);
     }
-  });
-  
-  // Endpoint to retrieve all experiencias
-  router.get('/experiencias/:id', async (req, res) => {
+}
+
+const getExperienciesByProfileId = async (req, res) => {
     try {
       const id = req.params.id;
   
@@ -68,10 +62,9 @@ const router = Router();
       console.error(error);
       res.status(500).send(error);
     }
-  });
-  
-  // Endpoint to retrieve all intereses
-  router.get('/intereses/:id', async (req, res) => {
+}
+
+const getInteresesByProfileId = async (req, res) => {
     try {
       const id = req.params.id;
   
@@ -93,10 +86,9 @@ const router = Router();
       console.error(error);
       res.status(500).send(error);
     }
-  });
-  
-  // Endpoint to retrieve all aptitudes
-  router.get('/aptitudes/:id', async (req, res) => {
+}
+
+const getAptitudesByProfileId = async (req, res) => {
     try {
       const id = req.params.id;
   
@@ -118,11 +110,9 @@ const router = Router();
       console.error(error);
       res.status(500).send(error);
     }
-  });
-  
-  
-  // Endpoint to retrieve all hobbies
-  router.get('/hobbies/:id', async (req, res) => {
+}
+
+const getHobbiesByProfileId = async (req, res) => {
     try {
       const id = req.params.id;
   
@@ -144,11 +134,9 @@ const router = Router();
       console.error(error);
       res.status(500).send(error);
     }
-  });
-  
-  
-  // Endpoint to retrieve a specific profile by ID
-  router.get('/profiles/:id', async (req, res) => {
+}
+
+const getProfileById = async (req, res) => {
     try {
       const id = req.params.id;
       const collection = await connectToDatabase('profiles');
@@ -158,10 +146,9 @@ const router = Router();
       console.error(error);
       res.status(500).send(error);
     }
-  });
-  
-  // Endpoint to create a new profile
-  router.post('/profiles', async (req, res) => {
+}
+
+const addProfile = async (req, res) => {
     try {
       const data = req.body;
       const collection = await connectToDatabase('profiles');
@@ -171,11 +158,9 @@ const router = Router();
       console.error(error);
       res.status(500).send(error);
     }
-  });
-  
-  
-  // Endpoint to update an existing profile
-  router.put('/profiles/:id', async (req, res) => {
+}
+
+const updateProfile = async (req, res) => {
     try {
       const id = req.params.id;
       const data = req.body;
@@ -186,11 +171,9 @@ const router = Router();
       console.error(error);
       res.status(500).send(error);
     }
-  });
-  
-  
-  // Endpoint to delete an existing profile
-  router.delete('/profiles/:id', async (req, res) => {
+}
+
+const deleteProfile =  async (req, res) => {
     try {
       const id = req.params.id;
       const collection = await connectToDatabase('profiles');
@@ -200,7 +183,19 @@ const router = Router();
       console.error(error);
       res.status(500).send(error);
     }
-  });
+}
 
-
-  module.exports = router;
+module.exports = {
+    home,
+    getAllProfiles,
+    getProfileById,
+    getEstudiosByProfileId,
+    getProfileById,
+    getExperienciesByProfileId,
+    getInteresesByProfileId,
+    getHobbiesByProfileId,
+    getAptitudesByProfileId,
+    addProfile,
+    updateProfile,
+    deleteProfile
+}
