@@ -5,7 +5,7 @@ const { ObjectId } = require('mongodb');
 const router = Router();
 
   router.get('/', (req, res) => {
-    res.send('Hey this is my API running 🥳')
+    res.send('Hey this is my API running 🥳');
   })
   
   // Endpoint to retrieve all profiles

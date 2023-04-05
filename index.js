@@ -22,7 +22,7 @@ app.listen(PORT, () => {
 });
 
 app.use( '/api', require('./routes/controllers'), (req,res ) => {
-  res.redirect('/api');
+  res.send('Hey this is my API running 🥳 -> /api');
 });
 
 // Export the Express API
